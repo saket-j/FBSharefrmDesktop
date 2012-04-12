@@ -1,0 +1,10 @@
+#!/bin/sh
+
+files=""
+while [ $# -gt 0 ]
+do
+    file=`echo "$1" | sed 's/ /\\ /g'`
+    files="$file $files"
+    shift
+done
+python ~/Hackathon/main.py $files
